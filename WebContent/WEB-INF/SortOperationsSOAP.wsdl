@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.simit.org/SortOperations/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SortOperations" targetNamespace="http://www.simit.org/SortOperations/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.simit.org/SortOperations/">
+      <xsd:element name="BubbleSort">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="in" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BubbleSortResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="out" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InsertionSort">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element maxOccurs="unbounded" minOccurs="1" name="in" type="xsd:int"/>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InsertionSortResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element maxOccurs="unbounded" minOccurs="1" name="out" type="xsd:int"/>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SelectionSort">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+                        <xsd:element maxOccurs="unbounded" minOccurs="1" name="in" type="xsd:int"/>
+                    </xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SelectionSortResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element maxOccurs="unbounded" minOccurs="1" name="out" type="xsd:int"/>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="QuickSort">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element maxOccurs="unbounded" minOccurs="1" name="in" type="xsd:int"/>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="QuickSortResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element maxOccurs="unbounded" minOccurs="1" name="out" type="xsd:int"/>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="BubbleSortRequest">
+    <wsdl:part element="tns:BubbleSort" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="BubbleSortResponse">
+    <wsdl:part element="tns:BubbleSortResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="InsertionSortRequest">
+  	<wsdl:part element="tns:InsertionSort" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="InsertionSortResponse">
+  	<wsdl:part element="tns:InsertionSortResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SelectionSortRequest">
+  	<wsdl:part element="tns:SelectionSort" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SelectionSortResponse">
+  	<wsdl:part element="tns:SelectionSortResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="QuickSortRequest">
+  	<wsdl:part element="tns:QuickSort" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="QuickSortResponse">
+  	<wsdl:part element="tns:QuickSortResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SortOperations">
+    <wsdl:operation name="BubbleSort">
+      <wsdl:input message="tns:BubbleSortRequest"/>
+      <wsdl:output message="tns:BubbleSortResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="InsertionSort">
+    	<wsdl:input message="tns:InsertionSortRequest"/>
+    	<wsdl:output message="tns:InsertionSortResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="SelectionSort">
+    	<wsdl:input message="tns:SelectionSortRequest"/>
+    	<wsdl:output message="tns:SelectionSortResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="QuickSort">
+    	<wsdl:input message="tns:QuickSortRequest"/>
+    	<wsdl:output message="tns:QuickSortResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SortOperationsSOAP" type="tns:SortOperations">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="BubbleSort">
+      <soap:operation soapAction="http://www.simit.org/SortOperations/BubbleSort"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertionSort">
+      <soap:operation soapAction="http://www.simit.org/SortOperations/InsertionSort"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectionSort">
+      <soap:operation soapAction="http://www.simit.org/SortOperations/SelectionSort"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickSort">
+      <soap:operation soapAction="http://www.simit.org/SortOperations/QuickSort"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SortOperations">
+    <wsdl:port binding="tns:SortOperationsSOAP" name="SortOperationsSOAP">
+      <soap:address location="http://localhost:8080/SortOperations/services/SortOperationsSOAP"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
